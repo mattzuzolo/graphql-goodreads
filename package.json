@@ -1,0 +1,30 @@
+{
+  "name": "graphql-goodreads",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start-watch": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattzuzolo/graphql-goodreads.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattzuzolo/graphql-goodreads/issues"
+  },
+  "homepage": "https://github.com/mattzuzolo/graphql-goodreads#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "node-fetch": "^2.2.0",
+    "nodemon": "^1.18.5",
+    "xml2js": "^0.4.19"
+  }
+}
