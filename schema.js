@@ -24,6 +24,17 @@ const BookType = new GraphQLObjectType({
         // xml.title[0]
 
     },
+    authors: {
+      type: new GraphQLList(AuthorType),
+      resolve: xml => {
+        const authorElements = xml.GoodreadsResponse.book[0].authors[0].author;
+        const ids = authorElements.map(elem => elem.id[0]);
+        return Promise.all(ids.map(id =>
+        fetch(`https://www.goodreads.com/author/list/${id}?format=xml&key=PlzRig5nleiS3XvYNYYPfA`)
+          .then(response => response.text())
+          .then(parseXML)))
+      }
+    }
   })
 })
 
